@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        const numRows = 16;
+        const numCols = 16;
+        const mainContainer = document.querySelector('.container');
+
+        for (let i = 1; i <= numCols; i++) {
+            const col = document.createElement('div');
+            col.classList.add('col');
+            mainContainer.appendChild(col);
+
+            for (let j = 1; j <= numRows; j++) {
+                const row = document.createElement('div');
+                row.classList.add('row');
+                row.textContent = `${String.fromCharCode(i + 64)}${j}`;
+                row.dataset.cord = `${String.fromCharCode(i + 64)}${j}`;
+                col.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
