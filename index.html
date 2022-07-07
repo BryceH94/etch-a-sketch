@@ -22,6 +22,9 @@
         let currentNumCols = 16;
         const rgbRE = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
         const mainBoard = document.querySelector('.board');
+        const boardCSS = window.getComputedStyle(mainBoard, null);
+        let boardHeight = parseInt(boardCSS.getPropertyValue("height"));
+        let boardWidth = parseInt(boardCSS.getPropertyValue("width"));
 
         function darkenCell(e) {
             const rgbArray = rgbRE.exec(this.style.backgroundColor);
@@ -44,6 +47,8 @@
         function generateBoard(numRows, numCols) {
             currentNumRows = numRows;
             currentNumCols = numCols;
+            const cellHeight = boardHeight / numRows;
+            const cellWidth = boardWidth / numCols;
 
             const oldBoardCells = document.querySelectorAll('.cell');
             if (oldBoardCells) {
@@ -59,8 +64,8 @@
                     const cell = document.createElement('div');
                     cell.classList.add('cell');
                     cell.style.backgroundColor = 'rgb(255, 255, 255)';
-                    cell.textContent = `${String.fromCharCode(i + 64)}${j}`;
-                    cell.dataset.cord = `${String.fromCharCode(i + 64)}${j}`;
+                    cell.style.height = `${cellHeight}px`;
+                    cell.style.width = `${cellWidth}px`;
                     col.appendChild(cell);
                 }
             }
