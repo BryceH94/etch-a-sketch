@@ -1,10 +1,22 @@
-div {
-    border: 1px solid black;
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 20vw 10vh 20vw;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell {
+    border: 1px solid black;
 }
