@@ -2,23 +2,23 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0 20vw 5vh 20vw;
+    margin: 0 20vw 2vh 20vw;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .board {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 1000px;
+    align-items: flex-start;
+    height: 88vh;
+    width: 90vw;
+    border: 1px dotted black;
 }
 
 .cell {
-    border: 1px solid black;
+    border: 1px dotted black;
 }

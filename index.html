@@ -47,8 +47,8 @@
         function generateBoard(numRows, numCols) {
             currentNumRows = numRows;
             currentNumCols = numCols;
-            const cellHeight = boardHeight / numRows;
-            const cellWidth = boardWidth / numCols;
+            const cellHeight = (boardHeight / numRows) - 2; //Border width * 2
+            const cellWidth = (boardWidth / numCols) - 2;
 
             const oldBoardCells = document.querySelectorAll('.cell');
             if (oldBoardCells) {
